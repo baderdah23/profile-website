@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Zain&display=swap");
+
+:root {
+  /* ---- examole ---- */
+  /* --bader:  red; */
+  --ui-font: "Zain";
+  --color-very-dark-blue: #0f1424;
+  --color-dark-blue: #1c1f4a;
+  --color-desaturated-blue: #5646e9;
+  --color-pale-blue: #bdc1ff;
+  --color-white: #fff;
+  --defualt-padding: 2rem;
+  --default-radius: 0.8rem;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Remove default margins and set base line-height */
+* {
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-white);
+  font-family: var(--ui-font);
+  font-weight: 400;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--color-white);
+}
+
+.contianer {
+  background-color: var(--color-very-dark-blue);
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 20rem);
+  gap: var(--defualt-padding);
+}
+
+.user-card {
+  grid-row: span 2;
+  background-color: var(--color-dark-blue);
+  border-radius: var(--default-radius);
+  overflow: hidden;
+}
+.name {
+  margin-top: 0.2rem;
+  font-size: 2.6rem;
+  font-weight: 300;
+}
+
+.top {
+  height: 55%;
+  background-color: var(--color-desaturated-blue);
+  padding: var(--defualt-padding);
+}
+.pic {
+  width: 10rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 0.2rem solid var(--color-white);
+}
+
+.bottom {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--defualt-padding);
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.icon {
+  margin: 0.3rem;
+  width: 2rem;
+  aspect-ratio: 1;
+}
+
+.username {
+  font-weight: 400;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-dark-blue);
+  padding: var(--defualt-padding);
+  border-radius: var(--defualt-padding);
+}
+
+.project-title {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.project-type {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+.stack-title {
+  gap: 0.5rem;
+}
+
+.languages {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.language {
+  display: inline-block;
+  background-color: var(--color-desaturated-blue);
+  border-radius: calc(var(--default-radius) / 3);
+  font-weight: 550;
+  padding: 0.5rem;
+}
+
+@media (min-width: 640px) and (max-width: 1000px) {
+  .contianer {
+    grid-template-columns: repeat(2, 1fr);
+    align-content: start;
+    align-items: start;
+  }
+
+  .user-card {
+    grid-column: span 2;
+    display: flex;
+    background-color: var(--color-dark-blue);
+    border-radius: 0;
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;
+  }
+  .bottom {
+    flex: 1;
+  }
+
+  .card {
+    margin: 0 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contianer {
+    grid-template-columns: 1fr;
+    align-content: start;
+    align-items: start;
+  }
+
+  .user-card {
+    grid-row: 1;
+    border-radius: 0;
+  }
+
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card {
+    margin: 0 2rem;
+  }
+  .card:last-child {
+    margin-bottom: 2rem;
+  }
+}
